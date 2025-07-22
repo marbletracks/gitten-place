@@ -1,3 +1,83 @@
+# 📱 Mobile Git Deployment Panel for https://www.marbletrack3.com 
+
+This project provides a **mobile-friendly web interface** for deploying Git-based websites hosted on [DreamHost Shared Hosting](https://www.dreamhost.com/). It allows you to:
+
+- ✅ Pull the latest changes from your Git repository
+- ✅ Switch to a different remote branch
+- ✅ Roll back to a previous commit
+- ✅ Use it securely from your phone via HTTPS and basic auth
+
+---
+
+## 🚀 Features
+
+- PHP-based, works on DreamHost shared hosting
+- Lightweight UI with [Picnic CSS](https://picnicss.com/)
+- Secure access via `.htaccess`
+- Dropdown for selecting branches from the remote (e.g., `origin/main`, `origin/dev`)
+- Logs recent commits and shows Git output for actions
+
+---
+
+## 📁 Installation
+
+1. **Clone or copy the files** into a secure subfolder of your website, e.g. `/home/dh_user/example.com/wwwroot/git/`.
+
+2. **Update the path** in `deploy.php` to point to your repo:
+
+   ```php
+   $repoPath = '/home/youruser/example.com';  // Update this
+
+
+
+
+4. Visit your panel at:
+
+https://yourdomain.com/git
+
+
+
+
+---
+
+📱 Usage
+
+Pull Latest: Updates the current branch to the latest from origin.
+
+Switch Branch: Select a branch from the dropdown and switch to it.
+
+Rollback: Enter a short commit hash to reset the repo to that state.
+
+
+> 🔐 Ensure you're using HTTPS and keep your .htpasswd credentials secure.
+
+
+
+
+---
+
+⚠️ Notes
+
+This is intended for use by you as the developer. Do not expose to public users.
+
+The script uses shell_exec() and assumes your Git repo is already cloned and authorized via SSH or HTTPS.
+
+
+
+---
+
+🛠️ Todo / Ideas
+
+[ ] Add confirmation before rollback
+
+[ ] Show file diffs for commit rollback
+
+[ ] Log deployment actions
+
+[ ] Deploy via webhook (optional alternative)
+
+
+
 # DreamHost Site Template (MVP Framework)
 
 This is a minimalist PHP template framework developed originally for

@@ -21,19 +21,15 @@ This project provides a **mobile-friendly web interface** for deploying Git-base
 
 ## 📁 Installation
 
-1. **Clone or copy the files** into a secure subfolder of your website, e.g. `/home/dh_user/example.com/wwwroot/git/`.
+1. **Clone or copy the files** into a secure subfolder of your website, e.g. `/home/dh_user/example.com/wwwroot/admin/git/`.
 
-2. **Update the path** in `deploy.php` to point to your repo:
-
-   ```php
-   $repoPath = '/home/youruser/example.com';  // Update this
-
+2. create a symlink of `classes/Config.php` --> `../../classes/Config.php`
 
 
 
 4. Visit your panel at:
 
-https://yourdomain.com/git
+https://yourdomain.com/admin/git
 
 
 
@@ -49,7 +45,7 @@ Switch Branch: Select a branch from the dropdown and switch to it.
 Rollback: Enter a short commit hash to reset the repo to that state.
 
 
-> 🔐 Ensure you're using HTTPS and keep your .htpasswd credentials secure.
+> 🔐 Ensure you're using HTTPS and login with same credentials as base website.
 
 
 
@@ -58,9 +54,9 @@ Rollback: Enter a short commit hash to reset the repo to that state.
 
 ⚠️ Notes
 
-This is intended for use by you as the developer. Do not expose to public users.
+This will hopefully be nestable.  `/domain.com/wwwroot/git/git/git`
 
-The script uses shell_exec() and assumes your Git repo is already cloned and authorized via SSH or HTTPS.
+The script uses shell_exec() and assumes your Git repo is already cloned and authorized via SSH.
 
 
 
@@ -78,21 +74,9 @@ The script uses shell_exec() and assumes your Git repo is already cloned and aut
 
 
 
-# DreamHost Site Template (MVP Framework)
 
-This is a minimalist PHP template framework developed originally for
-db.**MarbleTrack3** and now used as a starter for DreamHost-based sites.
-It includes a simple admin dashboard, a lightweight templating engine,
-and a clean layout system with optional authentication hooks.
 
----
 
-## 📂 Structure
-
-- `classes/Template.php`: Core rendering engine with support for string-capture (`grabTheGoods()`) and layout nesting.
-- `wwwroot/`: Public-facing files. Place your admin pages here (`/admin/index.php`, etc).
-- `templates/`: Your site’s UI. Includes layout wrappers and specific content templates.
-- `css/styles.css`: Soft blue aesthetic with clean panels and nav bar.
 
 ---
 
